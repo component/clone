@@ -1,0 +1,16 @@
+{
+  "name": "clone",
+  "version": "0.1.0",
+  "dependencies": {
+    "type-component": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "expect.js": "*"
+  },
+  "component": {
+    "scripts": {
+      "clone/index.js": "index.js"
+    }
+  }
+}
