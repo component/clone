@@ -6,14 +6,21 @@
 ## Example
 
 ```js
-var obj = clone({ a: 'b' })
+var obj = clone({
+  a: 'b',
+  c: [
+    new Date(),
+    'tobi',
+    'jane'
+  ]
+})
 ```
 
 ## API
 
 ### clone(obj)
 
-  Returns the cloned object.
+  Clones `obj` recursively and returns it.
 
 ## License
 
