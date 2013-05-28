@@ -57,4 +57,24 @@ describe('clone', function(){
     expect(cloned.a.b[3]).not.to.be(obj.a.b[3]);
   });
 
+  it('object with functions', function() {
+    var func   = function () { return 'original'; };
+    var host   = { fluent: func };
+    var cloned = clone(host);
+
+    // cloned function matches original
+
+    expect(cloned.fluent).to.be(func);
+
+    // change cloned function (no longer matches original)
+
+    cloned.fluent = function () { return 'updated'; };
+    expect(cloned.fluent).not.to.be(func);
+    expect(cloned.fluent()).to.be('updated');
+
+    // original function is still in place
+
+    expect(func()).to.be('original');
+  });
+
 });
