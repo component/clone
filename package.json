@@ -12,5 +12,9 @@
     "scripts": {
       "clone/index.js": "index.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/clone.git"
   }
 }
