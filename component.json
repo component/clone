@@ -1,5 +1,6 @@
 {
   "name": "clone",
+  "repo": "component/clone",
   "version": "0.1.0",
   "dependencies": {
     "component/type": "*"
