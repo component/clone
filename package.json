@@ -2,7 +2,7 @@
   "name": "clone-component",
   "version": "0.1.1",
   "dependencies": {
-    "type-component": "*"
+    "type-component": "0.0.1"
   },
   "devDependencies": {
     "mocha": "*",
