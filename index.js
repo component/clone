@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var type = require('type');
+var type = require('type-component');
 
 /**
  * Module exports.

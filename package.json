@@ -8,9 +8,6 @@
     "mocha": "*",
     "expect.js": "*"
   },
-  "browser": {
-    "type": "type-component"
-  },
   "component": {
     "scripts": {
       "clone/index.js": "index.js"
