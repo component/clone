@@ -1,4 +1,10 @@
 
+0.2.1 / 2014-03-01
+==================
+
+ * make clone work in all environments FOR REAL
+ * change npm name to component-clone
+
 0.2.0 / 2014-01-27
 ==================
 

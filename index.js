@@ -2,11 +2,7 @@
  * Module dependencies.
  */
 
-try {
-  var type = require('type');
-} catch (e) {
-  var type = require('type-component');
-}
+var type = require('component-type');
 
 /**
  * Module exports.
