@@ -19,5 +19,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/component/clone.git"
+  },
+  "browser": {
+    "type": "component-type"
   }
 }
