@@ -77,4 +77,36 @@ describe('clone', function(){
     expect(func()).to.be('original');
   });
 
+  describe('shallow cloning', function () {
+    var now = new Date();
+
+    it('should work with objects', function () {
+      var o = {
+        regex: /foo/,
+        bool: true,
+        date: now,
+        number: 5.0,
+        object: {
+          bool: false
+        }
+      };
+
+      var cloned = clone(o, true);
+
+      expect(cloned).to.eql(o);
+      expect(cloned.date).to.not.be(o.date);
+      expect(cloned.regex).to.not.be(o.regex);
+      expect(cloned.object).to.equal(o.object);
+    });
+
+    it('should work with arrays', function () {
+      var o = [ /foo/, true, now, 5.0, { bool: false } ]
+      var cloned = clone(o, true);
+
+      expect(cloned).to.eql(o);
+      expect(cloned[0]).to.not.be(o[0]);
+      expect(cloned[2]).to.not.be(o[2]);
+      expect(cloned[4]).to.equal(o[4]);
+    });
+  });
 });

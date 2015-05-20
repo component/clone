@@ -18,16 +18,26 @@ module.exports = clone;
 /**
  * Clones objects.
  *
- * @param {Mixed} any object
+ * @param {Mixed} obj          any object
+ * @param {Boolean} [shallow]  whether to shallow clone only
  * @api public
  */
 
-function clone(obj){
+function clone(obj, shallow){
   switch (type(obj)) {
     case 'object':
       var copy = {};
       for (var key in obj) {
         if (obj.hasOwnProperty(key)) {
+          if (shallow) {
+            switch (type(obj[key])) {
+              case 'object':
+              case 'array':
+                copy[key] = obj[key];
+                continue;
+            }
+          }
+
           copy[key] = clone(obj[key]);
         }
       }
@@ -36,6 +46,15 @@ function clone(obj){
     case 'array':
       var copy = new Array(obj.length);
       for (var i = 0, l = obj.length; i < l; i++) {
+        if (shallow) {
+          switch (type(obj[i])) {
+            case 'object':
+            case 'array':
+              copy[i] = obj[i];
+              continue;
+          }
+        }
+
         copy[i] = clone(obj[i]);
       }
       return copy;
